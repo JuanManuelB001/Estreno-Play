@@ -15,7 +15,7 @@ export function ContentMovieCard(){
         <div>
             <ul>
                 {movies?.map((mov)=>(
-                    <MovieCard key={mov.id} props={movie} />
+                    <MovieCard key={mov.id} props={mov} />
                 ))}
             </ul>
         </div>
