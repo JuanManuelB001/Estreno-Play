@@ -9,7 +9,7 @@ import carrusel from "./carruselMovie.module.css";
 import {StartRate} from "./StartRate";
 export function CarruselMovie() {
   const [movies, setMovies] = useState([]);
-
+  
   useEffect(() => {
     getApi("/discover/movie").then((data) => {
       setMovies(data.results);

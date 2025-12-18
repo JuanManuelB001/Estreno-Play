@@ -21,8 +21,10 @@ export function ContentMovieCard(){
     return(
         <div>
             <input type="text" placeholder="Buscar pelicula"value={search}  onChange={(e)=> setSearch(e.target.value)}/>
+            {/*MOSTRAR CARRUSEL SI EL INPUT ESTA VACIO */}
+            {search === ""  && <CarruselMovie/>}
             <ul>
-                <CarruselMovie/>
+                
                 {movies?.map((mov)=>(
                     <MovieCard key={mov.id} props={mov} />
                 ))}
