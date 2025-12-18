@@ -4,14 +4,22 @@ import { getAdapter } from "axios";
 import { getApi } from "../data/httpClient";
 import { GetImages } from "../utils/GetImages";
 import { StartRate } from "../components/StartRate";
+import you from "react-youtube";
+
 export function DetailsPage(){
     let {movieId} = useParams();
     const [movies, setMovies] = useState([])
     const [genero, setGenero]= useState([]);
+    // TRAILER
+    const [trailer, setTrailer] = useState(null);
+    const [movie, setMovie] = useState({title: "Loading Movie..."})
+    const [playing, setPlaying] = useState(false);
+
     useEffect(()=>{
         getApi("/movie/"+movieId).then((data)=>{
             setMovies(data);
             setGenero(data.genres);
+            console.log(data);
         });
         
     },[movieId]);

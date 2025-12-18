@@ -4,15 +4,22 @@ import { MovieCard } from "./MovieCard";
 
 export function ContentMovieCard(){
     const [movies, setMovie] = useState([]);
+    const [search, setSearch] = useState("");
     // CARGAR PELICULAS
-    useEffect((data)=>{
-        getApi("/discover/movie").then((data)=>{
-            setMovie(data.results);
-            console.log(data.results);
-        });
-    }, []);
+    useEffect(()=>{
+        if(search === ""){
+            getApi("/discover/movie").then((data)=>{
+                setMovie(data.results);
+            })
+        }else{
+            getApi(`/search/movie?query=${search}`).then((data)=>{
+                setMovie(data.results);
+            })
+        }
+    }, [search]);
     return(
         <div>
+            <input type="text" placeholder="Buscar pelicula"value={search}  onChange={(e)=> setSearch(e.target.value)}/>
             <ul>
                 {movies?.map((mov)=>(
                     <MovieCard key={mov.id} props={mov} />
