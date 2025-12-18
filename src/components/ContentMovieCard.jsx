@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getApi } from "../data/httpClient";
 import { MovieCard } from "./MovieCard";
+import { CarruselMovie } from "./CarruselMovie";
 
 export function ContentMovieCard(){
     const [movies, setMovie] = useState([]);
@@ -21,6 +22,7 @@ export function ContentMovieCard(){
         <div>
             <input type="text" placeholder="Buscar pelicula"value={search}  onChange={(e)=> setSearch(e.target.value)}/>
             <ul>
+                <CarruselMovie/>
                 {movies?.map((mov)=>(
                     <MovieCard key={mov.id} props={mov} />
                 ))}
