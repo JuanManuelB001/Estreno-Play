@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getApi } from "../data/httpClient";
 import { MovieCard } from "./MovieCard";
 import { CarruselMovie } from "./CarruselMovie";
-
+import "./contentMovie.css"
 export function ContentMovieCard(){
     const [movies, setMovie] = useState([]);
     const [search, setSearch] = useState("");
@@ -19,16 +19,17 @@ export function ContentMovieCard(){
         }
     }, [search]);
     return(
-        <div>
+        <div >
             <input type="text" placeholder="Buscar pelicula"value={search}  onChange={(e)=> setSearch(e.target.value)}/>
             {/*MOSTRAR CARRUSEL SI EL INPUT ESTA VACIO */}
             {search === ""  && <CarruselMovie/>}
-            <ul>
+            <div className="container">
+                
                 
                 {movies?.map((mov)=>(
                     <MovieCard key={mov.id} props={mov} />
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }

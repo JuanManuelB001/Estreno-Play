@@ -1,0 +1,36 @@
+
+.detailsContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.col{
+    max-width: 600px;
+    margin: 15px;
+    height: auto;
+    width: 80%;
+}
+
+.title{
+    margin: 10 auto;
+    padding: 10px 15px;
+    width: 40%;
+    text-align: center;
+}
+.lista{
+    list-style: none;
+    padding-left: 25px;    
+}
+.imagenPost{
+    
+    border-radius: 10px;
+    margin-top: 15px;
+    object-fit: cover;
+}
+
+.movieDetails{
+    color: white;
+    font-size: 1.5rem;
+    margin: 4px 40px;
+}

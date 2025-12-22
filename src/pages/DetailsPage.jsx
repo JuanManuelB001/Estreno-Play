@@ -5,6 +5,7 @@ import { getApi } from "../data/httpClient";
 import { GetImages } from "../utils/GetImages";
 import { StartRate } from "../components/StartRate";
 import you from "react-youtube";
+import "./detailsPage.css"
 
 export function DetailsPage(){
     let {movieId} = useParams();
@@ -26,14 +27,17 @@ export function DetailsPage(){
     let imagen = GetImages(movies.poster_path, 500);
     return(
         <div>
-            <div>
-                <img src={imagen} alt={movies.title}/>
-                <p>popularidad</p>
+            <h2 className="title">{movies.title}</h2>
+            <div className="detailsContainer" >
+                
+                <img src={imagen} alt={movies.title} className="imagenPost" />
+                <div className={"col movieDetails"}>
+                    <p>popularidad</p>
                 <StartRate popularity= {movies.popularity}/>
                 <p><strong>Popularity</strong> {movies.popularity}</p>
                 <p><strong>Tittle:</strong> {movies.title}</p>
                 <p><strong>Genero:</strong></p>
-                <ul>
+                <ul className="lista">
                     {genero?.map((gen)=>(
                         <li key={gen.id}>
                             {gen.name}
@@ -43,6 +47,7 @@ export function DetailsPage(){
                 <p>
                     <strong>OverView</strong> {movies.overview}
                 </p>
+                </div>
             </div>
         </div>
     );

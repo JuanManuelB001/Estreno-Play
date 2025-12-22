@@ -1,0 +1,28 @@
+
+.containerCard{
+    list-style: none;
+    width: 180px;
+    padding: 10px 15px;
+    margin: 10px 15px;
+    transition: 0.5s;
+}
+
+.containerCard:hover{
+    opacity: 0.5;
+    transform: translateY(-30px);
+    transition: 0.5s;
+}
+
+.title{
+    color: white;
+    text-decoration: none;
+    line-height: 1;
+    margin:10px auto;
+}
+
+.link{
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    border-radius: 10px;
+}
