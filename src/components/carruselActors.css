@@ -1,0 +1,38 @@
+
+
+
+.swiper-button-next, .swiper-button-prev {
+    color: #fff; /* Color de las flechas */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo transparente con algo de opacidad */
+    border-radius: 50%; /* Hacerlas redondas */
+    padding: 10px;
+    display: flex; /* Asegura que las flechas se muestren como un contenedor */
+    align-items: center; /* Centra el contenido dentro de las flechas */
+    justify-content: center; /* Centra el contenido dentro de las flechas */
+    z-index: 10; /* Asegura que las flechas estén por encima del contenido */
+    cursor: pointer; /* Cambia el cursor para indicar que son clickeables */
+    position: absolute; /* Posiciona las flechas de manera absoluta dentro del contenedor */
+}
+
+.swiper-button-next {
+    right: 10px; /* Posiciona la flecha de la derecha */
+    top: 50%; /* Centra la flecha verticalmente */
+    transform: translateY(-50%); /* Ajusta la posición exacta */
+}
+
+.swiper-button-prev {
+    left: 10px; /* Posiciona la flecha de la izquierda */
+    top: 50%; /* Centra la flecha verticalmente */
+    transform: translateY(-50%); /* Ajusta la posición exacta */
+    transform: rotate(180deg);
+}
+
+.mySwiper {
+    position: relative; /* Asegura que las flechas se posicionen dentro del carrusel */
+}
+
+/* Aumentar el tamaño de las flechas para que sean más visibles */
+.swiper-button-next::after, .swiper-button-prev::after {
+    font-size: 30px; /* Tamaño de las flechas */
+    font-weight: bold; /* Hacer las flechas más visibles */
+}

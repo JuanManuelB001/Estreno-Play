@@ -6,11 +6,13 @@ import { GetImages } from "../utils/GetImages";
 import { StartRate } from "../components/StartRate";
 import you from "react-youtube";
 import "./detailsPage.css"
-
+import { CarruselActors } from "../components/CarruselActors";
 export function DetailsPage(){
     let {movieId} = useParams();
     const [movies, setMovies] = useState([])
     const [genero, setGenero]= useState([]);
+    const [reparto, setReparto] = useState([]);
+
     // TRAILER
     const [trailer, setTrailer] = useState(null);
     const [movie, setMovie] = useState({title: "Loading Movie..."})
@@ -19,9 +21,13 @@ export function DetailsPage(){
     useEffect(()=>{
         getApi("/movie/"+movieId).then((data)=>{
             setMovies(data);
-            setGenero(data.genres);
-            console.log(data);
+            
         });
+        //OPTENER EL REPARTO DE LA PELICULA
+        getApi("/movie/"+movieId+"/credits").then((data)=>{
+            setReparto(data.cast);
+            
+        })
         
     },[movieId]);
     let imagen = GetImages(movies.poster_path, 500);
@@ -48,6 +54,10 @@ export function DetailsPage(){
                     <strong>OverView</strong> {movies.overview}
                 </p>
                 </div>
+            </div>
+            <div className="reparto">
+                <h2 className="title">Reparto</h2>
+                <CarruselActors props={reparto}/>
             </div>
         </div>
     );

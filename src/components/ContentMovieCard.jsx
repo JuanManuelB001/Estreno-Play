@@ -24,8 +24,6 @@ export function ContentMovieCard(){
             {/*MOSTRAR CARRUSEL SI EL INPUT ESTA VACIO */}
             {search === ""  && <CarruselMovie/>}
             <div className="container">
-                
-                
                 {movies?.map((mov)=>(
                     <MovieCard key={mov.id} props={mov} />
                 ))}
