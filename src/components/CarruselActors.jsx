@@ -8,18 +8,33 @@ export function CarruselActors({props}){
 
         <Swiper 
         className="carrusel"
-        modules={[Autoplay, Navigation]}  // Usar ambos módulos: Autoplay y Navigation
+        modules={[Autoplay, Navigation]}
             slidesPerView={3}
             slidesPerGroup={1}
             spaceBetween={8}
             loop={true}
             autoplay={{
-                delay: 3000, // Tiempo de pausa entre slides
+                delay: 3000,
                 disableOnInteraction: false,
             }}
             navigation={{
-                nextEl: '.swiper-button-next',  // Clase correcta para el botón siguiente
-                prevEl: '.swiper-button-prev',  // Clase correcta para el botón anterior
+                nextEl: '.swiper-button-next',  
+                prevEl: '.swiper-button-prev',  
+            }}
+            breakpoints={{
+                560: {
+                    slidesPerView:1,
+                    spaceBetween:10,
+
+                },
+                  768: {
+                    slidesPerView: 2,  
+                },
+                1024: {
+                    slidesPerView: 3,  
+                },
+                
+
             }}
         >
             

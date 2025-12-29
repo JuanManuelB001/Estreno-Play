@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 .container{
     display: grid;
@@ -5,6 +6,20 @@
     gap: 40px;
     padding: 20px;
     justify-content: center;
+}
+.buscar{
+    margin: 10px 15px;
+    height: 20px;
+    width: 220px;
+    color: rgb(6, 1, 1);
+    opacity: 1;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+
+}
+.buscar:hover{
+    cursor: pointer;
 }
 
 @media(max-width: 560px){

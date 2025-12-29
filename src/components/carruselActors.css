@@ -21,7 +21,7 @@
 }
 
 .swiper-button-prev {
-    left: 10px; /* Posiciona la flecha de la izquierda */
+    left: 0px; /* Posiciona la flecha de la izquierda */
     top: 50%; /* Centra la flecha verticalmente */
     transform: translateY(-50%); /* Ajusta la posición exacta */
     transform: rotate(180deg);
@@ -36,3 +36,5 @@
     font-size: 30px; /* Tamaño de las flechas */
     font-weight: bold; /* Hacer las flechas más visibles */
 }
+
+
