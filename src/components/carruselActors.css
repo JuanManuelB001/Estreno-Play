@@ -2,16 +2,16 @@
 
 
 .swiper-button-next, .swiper-button-prev {
-    color: #fff; /* Color de las flechas */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo transparente con algo de opacidad */
-    border-radius: 50%; /* Hacerlas redondas */
+    color: #fff; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 50%; 
     padding: 10px;
-    display: flex; /* Asegura que las flechas se muestren como un contenedor */
-    align-items: center; /* Centra el contenido dentro de las flechas */
-    justify-content: center; /* Centra el contenido dentro de las flechas */
-    z-index: 10; /* Asegura que las flechas estén por encima del contenido */
-    cursor: pointer; /* Cambia el cursor para indicar que son clickeables */
-    position: absolute; /* Posiciona las flechas de manera absoluta dentro del contenedor */
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    z-index: 10; 
+    cursor: pointer;
+    position: absolute; 
 }
 
 .swiper-button-next {

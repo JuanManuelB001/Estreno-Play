@@ -7,6 +7,7 @@ import { StartRate } from "../components/StartRate";
 import you from "react-youtube";
 import "./detailsPage.css"
 import { CarruselActors } from "../components/CarruselActors";
+import { Companies } from "../components/Companies";
 export function DetailsPage(){
     let {movieId} = useParams();
     const [movies, setMovies] = useState([])
@@ -21,6 +22,7 @@ export function DetailsPage(){
     useEffect(()=>{
         getApi("/movie/"+movieId).then((data)=>{
             setMovies(data);
+            setGenero(data.genres);
             
         });
         //OPTENER EL REPARTO DE LA PELICULA
@@ -28,7 +30,6 @@ export function DetailsPage(){
             setReparto(data.cast);
             
         })
-        
     },[movieId]);
     let imagen = GetImages(movies.poster_path, 500);
     return(
@@ -53,7 +54,31 @@ export function DetailsPage(){
                 <p>
                     <strong>OverView</strong> {movies.overview}
                 </p>
+                
+                <p>
+                    productor companies
+                </p>
+                <div className="companiesContainer">
+                    {
+                        movies.production_companies?.map((companie)=>(
+                            <Companies key={movies.id} props={companie}/>
+                        ))
+                    }
                 </div>
+
+                <p className="contrie">
+                    Contrie productor
+                    {
+                        movies.production_countries?.map((contry)=>(
+                           <span key={movies.id} > { contry.name} </span>
+                        ))
+                    
+                    }
+
+
+                </p>
+                </div>
+               
             </div>
             <div className="reparto">
                 <h2 className="title">Reparto</h2>

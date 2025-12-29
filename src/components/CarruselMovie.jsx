@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 
 import { getApi } from "../data/httpClient";
@@ -19,7 +19,7 @@ export function CarruselMovie() {
   return (
     <Swiper
       className={carrusel.swiper}
-      modules={[Autoplay]}
+      modules={[Autoplay, Navigation]}
       autoplay={{
         delay: 3000,
         disableOnInteraction: false,
@@ -28,6 +28,10 @@ export function CarruselMovie() {
       slidesPerGroup={1}       // Avanzar 1 imagen por vez
       spaceBetween={8}
       loop={true}
+      navigation= {{
+        nextEl:".swiper-button-next",
+        prevEl:".swiper-button-prev"
+      }}
     >
       {movies.slice(0, 5).map((movie) => (
         <SwiperSlide key={movie.id} className={carrusel.slide}>
@@ -36,13 +40,19 @@ export function CarruselMovie() {
             alt={movie.title}
             className={carrusel.img}
           />
-          <div >
+          <div  className={carrusel.containerText}>
             <p>{movie.title}</p>
-            <p>{movie.overview}</p>
+            <p className={carrusel.text }>{movie.overview}</p>
             <StartRate popularity={movie.popularity}/>
           </div>
         </SwiperSlide>
       ))}
+
+      {/* BOTONES NAVEGACION */}
+      <div className="swiper-button-next">
+      </div>
+      <div className="swiper-button-prev"></div>
+
     </Swiper>
   );
 }
