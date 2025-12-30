@@ -20,11 +20,14 @@ export function CarruselActors({ props }) {
         prevEl: ".swiper-button-prev",
       }}
       breakpoints={{
+        220:{
+          slidesPerView: 1,
+        },
         560: {
           slidesPerView: 1,
-          spaceBetween: 10,
+          
         },
-        768: {
+        808: {
           slidesPerView: 2,
         },
         1024: {
@@ -36,7 +39,7 @@ export function CarruselActors({ props }) {
         /* RECORER PROPS DE REPARTO */
         
         props?.map((reparto) => (
-          <SwiperSlide key={reparto.id}>
+          <SwiperSlide className="slide" key={reparto.id}>
             <Casting props={reparto} />
           </SwiperSlide>
         ))
