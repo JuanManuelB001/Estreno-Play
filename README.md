@@ -1,5 +1,5 @@
 # VER PAGINA
-Si quieres ver el resultado, puedes verlo dando click al siguiente enlace  [click-aqui](https://profound-kheer-245f2f.netlify.app).
+Si quieres ver el resultado, puedes verlo dando click al siguiente enlace  [click-aqui](https://https://estreno-play-react.netlify.app).
 
 # React + Vite
 
