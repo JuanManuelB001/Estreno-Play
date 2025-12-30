@@ -32,6 +32,7 @@ export function CarruselMovie() {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       }}
+      
     >
       {movies.slice(0, 5).map((movie) => (
         <SwiperSlide key={movie.id} className={carrusel.slide}>

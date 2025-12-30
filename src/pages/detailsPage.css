@@ -86,4 +86,7 @@
   .movieDetails {
     padding: 10px;
   }
+  .title-data{
+    font-size: 8px;
+  }
 }

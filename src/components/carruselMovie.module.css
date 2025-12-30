@@ -54,3 +54,20 @@
 .link{
   width: 70%;
 }
+
+
+@media (max-width: 800px){
+  .swiper{
+    height: auto;
+    min-height: 600px;
+  }
+  .slide{
+    flex-direction: column;
+    padding-top: 20px;
+  }
+ 
+  .containerText{
+    text-align: center;
+    margin: 0;
+  }
+}
