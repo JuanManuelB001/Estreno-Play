@@ -41,10 +41,10 @@ export function DetailsPage() {
           <StartRate popularity={movies.popularity} />
           
           <p>
-            <strong className="title-data">Tittle </strong> {movies.title}
+            <strong className="title-data">Tittle:</strong> {movies.title}
           </p>
           <p>
-            <strong className="title-data">Genero </strong>
+            <strong className="title-data">Genero:</strong>
           </p>
           <ul className="lista">
             {genero?.map((gen) => (
@@ -52,7 +52,7 @@ export function DetailsPage() {
             ))}
           </ul>
           <p>
-            <strong className="title-data">OverView </strong> {movies.overview}
+            <strong className="title-data">OverView</strong> {movies.overview}
           </p>
 
           <p>productor companies</p>
@@ -63,7 +63,7 @@ export function DetailsPage() {
           </div>
 
           <p className="contrie">
-            
+            Contrie productor
             {movies.production_countries?.map((contry) => (
               <span key={movies.id}> {contry.name} </span>
             ))}
