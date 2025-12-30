@@ -1,66 +1,89 @@
+.detailsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-.detailsContainer{
+.col {
+  max-width: 600px;
+  margin: 15px;
+  height: auto;
+  width: 80%;
+}
+
+.title {
+  margin: 10 auto;
+  padding: 10px 15px;
+  width: 60%;
+  text-align: center;
+}
+.lista {
+  list-style: none;
+  padding-left: 25px;
+}
+.imagenPost {
+  border-radius: 10px;
+  margin-top: 15px;
+  object-fit: cover;
+  height: 70%;
+}
+
+.movieDetails {
+  color: white;
+  font-size: 1.5rem;
+  margin: 4px 40px;
+}
+.reparto {
+  padding: 10px 20px;
+  margin: 10px 15px;
+}
+
+.contrie {
+  margin-top: 30px;
+  float: right;
+  font-size: 20px;
+  color: #fff;
+  padding: 10px 15px;
+}
+.trailer{
+  padding: 8px 8px;
+  background-color: #000;
+  color: #fff;
+  margin: 10px 15px;
+  border-radius: 10px;
+  transition: 0.8s;
+  letter-spacing: 0.1rem;
+  box-shadow: 0 0 10px #28c56f;
+  border: #28c56f 1px solid;
+}
+
+.title-data{
+  margin-top: 20px;
+  font-size: 2rem;
+  color: #9F91FE;
+}
+
+.trailer:hover{
+  background-color: aqua;
+  color: white;
+  transition: 0.8s;
+  cursor: pointer ;
+  
+}
+
+@media (max-width: 560px) {
+  .detailsContainer {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.col{
-    max-width: 600px;
-    margin: 15px;
-    height: auto;
+    flex-direction: column;
+  }
+  .imagenPost {
     width: 80%;
-}
-
-.title{
-    margin: 10 auto;
-    padding: 10px 15px;
-    width: 60%;
-    text-align: center;
-}
-.lista{
-    list-style: none;
-    padding-left: 25px;    
-}
-.imagenPost{
-    border-radius: 10px;
-    margin-top: 15px;
-    object-fit: cover;
-    height: 70%;
-}
-
-.movieDetails{
-    color: white;
-    font-size: 1.5rem;
-    margin: 4px 40px;
-}
-.reparto{
-    padding: 10px 20px;
-    margin: 10px 15px;
-}
-
-.contrie{
-    margin-top: auto;
-    float: right;
-    font-size: 20px;
-    color: #fff;
-    padding: 10px 15px;
-}
-
-@media(max-width: 560px){
-    .detailsContainer{
-        display: flex;
-        flex-direction: column;
-    }
-    .imagenPost{
-        width: 80%;
-        margin: 10px auto;
-    }
-    .title{
-        width: 90%;
-    }
-    .movieDetails{
-        padding: 10px;
-
-    }
+    margin: 10px auto;
+  }
+  .title {
+    width: 90%;
+  }
+  .movieDetails {
+    padding: 10px;
+  }
 }

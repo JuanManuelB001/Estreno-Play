@@ -3,6 +3,7 @@ import { getApi } from "../data/httpClient";
 import { MovieCard } from "./MovieCard";
 import { CarruselMovie } from "./CarruselMovie";
 import "./contentMovie.css"
+import { TrailerYoutube } from "./TrailerYoutube";
 export function ContentMovieCard(){
     const [movies, setMovie] = useState([]);
     const [search, setSearch] = useState("");
@@ -28,6 +29,7 @@ export function ContentMovieCard(){
                     <MovieCard key={mov.id} props={mov} />
                 ))}
             </div>
+                
         </div>
     );
 }

@@ -3,9 +3,6 @@ import "./companies.css"
 
 export function Companies({props}){
     let imagen = GetImages(props.logo_path,200);
-
-    console.log(props);
-
     return (
         <div className="containerCompanies">
 

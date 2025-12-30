@@ -41,3 +41,16 @@
   display: flex;
   z-index: 10;
 }
+
+.trailer{
+  align-self: center;
+  margin-top: 199px;
+}
+
+.trailer:hover{
+  cursor: pointer;
+}
+
+.link{
+  width: 70%;
+}
