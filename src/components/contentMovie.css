@@ -13,6 +13,8 @@
     width: 220px;
     color: rgb(6, 1, 1);
     opacity: 1;
+    float: right;
+    margin-right: 3rem;
     font-size: 20px;
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
