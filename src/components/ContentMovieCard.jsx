@@ -21,7 +21,10 @@ export function ContentMovieCard(){
     }, [search]);
     return(
         <div >
-            <input type="text" placeholder="Buscar pelicula"value={search}  onChange={(e)=> setSearch(e.target.value)} className="buscar"/>
+            <div className="buscador">
+                <label htmlFor="pelicula" className="pelicula">Buscar Peliculas</label>
+                <input type="text" id="pelicula" placeholder="Buscar pelicula"value={search}  onChange={(e)=> setSearch(e.target.value)} className="buscar"/>
+            </div>
             {/*MOSTRAR CARRUSEL SI EL INPUT ESTA VACIO */}
             {search === ""  && <CarruselMovie/>}
             <div className="container">

@@ -56,6 +56,23 @@
 }
 
 
+@media (max-width: 1000px){
+  .swiper{
+    height: auto;
+    min-height: 600px;
+  }
+  .slide{
+    flex-direction: column;
+    padding-top: 20px;
+  }
+ 
+  .containerText{
+    text-align: center;
+    margin: 0;
+  }
+}
+
+
 @media (max-width: 810px){
   .swiper{
     height: auto;
