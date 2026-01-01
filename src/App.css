@@ -16,3 +16,33 @@ body{
   font-size: 3rem;
   color: #9F91FE;
 }
+
+::view-transition-old(root) {
+  animation: slideOut 0.6s ease forwards;
+}
+
+::view-transition-new(root) {
+  animation: slideIn 0.6s ease forwards;
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

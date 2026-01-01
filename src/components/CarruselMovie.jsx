@@ -3,18 +3,28 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getApi } from "../data/httpClient";
 import { GetImages } from "../utils/GetImages";
 import carrusel from "./carruselMovie.module.css";
 import { StartRate } from "./StartRate";
 import { TrailerYoutube } from "./TrailerYoutube";
 export function CarruselMovie() {
+  const navigation = useNavigate();
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     getApi("/discover/movie").then((data) => {
       setMovies(data.results);
     });
   }, []);
+  // AJUSTE NAVEGACION DETAILS PAGE
+  const irDetalle = (id) =>{
+    if(document.startViewTransition){
+      document.startViewTransition(()=>{
+     navigation("/movies/" + id);
+   })}; 
+      
+  }
 
   return (
     <Swiper
@@ -35,14 +45,15 @@ export function CarruselMovie() {
       
     >
       {movies.slice(0, 5).map((movie) => (
-        <SwiperSlide key={movie.id} className={carrusel.slide}>
-          <Link to={"/movies/" + movie.id} className={carrusel.link}>
+        <SwiperSlide key={movie.id} className={carrusel.slide}
+          onClick={()=> irDetalle(movie.id)}
+            >
             <img
               src={GetImages(movie.poster_path, 500)}
               alt={movie.title}
               className={carrusel.img}
             />
-          </Link>
+      
           <div className={carrusel.containerText}>
             <p>{movie.title}</p>
             <p className={carrusel.text}>{movie.overview}</p>
