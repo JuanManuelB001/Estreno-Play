@@ -32,7 +32,7 @@ export function DetailsPage() {
   }, [movieId]);
   let imagen = GetImages(movies.poster_path, 500);
   return (
-    <div>
+    <div className="page slide-in">
       <h2 className="title">{movies.title}</h2>
       <div className="detailsContainer">
         <img src={imagen} alt={movies.title} className="imagenPost" />
