@@ -6,10 +6,8 @@ return(
     <Router>
         <Routes>
            <Route exact path="/" element={<LandingPage/>} />
-        <Route exat path="/movies/:movieId"  element={<DetailsPage/>} />        
+        <Route exact path="/movies/:movieId"  element={<DetailsPage/>} />        
         </Routes>
-    
-       
     </Router>
 )
 }
