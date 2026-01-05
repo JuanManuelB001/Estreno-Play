@@ -21,8 +21,7 @@ export function DetailsPage() {
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
-    // COLOCAR EL SCROLL DE DETAIL PAGE EN 0 
-    window.scrollTo(0,0);
+    
     getApi("/movie/" + movieId).then((data) => {
       setMovies(data);
       setGenero(data.genres);
